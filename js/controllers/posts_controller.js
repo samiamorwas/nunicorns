@@ -7,9 +7,9 @@ App.PostsController = Ember.ArrayController.extend({
 
 	startSlice: 0,
 
-	endSlice: 2,
+	endSlice: 3,
 
-	interval: 2,
+	interval: 3,
 
 	hasNoNewer: function() {
 		return !(this.get('startSlice') > 0);
@@ -21,13 +21,18 @@ App.PostsController = Ember.ArrayController.extend({
 
 	actions: {
 		showNewer: function() {
-			this.set('startSlice', this.get('startSlice') - this.get('interval'));
-			this.set('endSlice', this.get('endSlice') - this.get('interval'));
+			var len = this.get('model').toArray().length;
+			var maxDiff = this.get('interval') - this.get('startSlice');
+			var diff = maxDiff > 0 ? len - (len - this.get('startSlice')) : this.get('interval');
+			this.set('startSlice', this.get('startSlice') - diff);
+			this.set('endSlice', this.get('endSlice') - diff);
 		},
 
 		showOlder: function() {
-			this.set('startSlice', this.get('startSlice') + this.get('interval'));
-			this.set('endSlice', this.get('endSlice') + this.get('interval'));
+			var maxDiff = this.get('model').toArray().length - this.get('endSlice');
+			var diff = Math.min(this.get('interval'), maxDiff);
+			this.set('startSlice', this.get('startSlice') + diff);
+			this.set('endSlice', this.get('endSlice') + diff);
 		}
 	}
 });
