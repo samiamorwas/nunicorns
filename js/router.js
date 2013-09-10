@@ -4,23 +4,9 @@ App.Router.map(function() {
 	});
 });
 
-// App.IndexRoute = Ember.Route.extend({
-// 	model: function() {
-// 		// Do some promise finagling to get the most recent post
-// 		return this.store.findAll('post').then(function(promise) {
-// 			return promise.toArray();
-// 		}).then(function(posts) {
-// 			return posts.sort().reverse()[0];
-// 		});
-// 	},
-
-// 	renderTemplate: function() {
-// 		this.render('post');
-// 	}
-// });
-
 App.PostsIndexRoute = Ember.Route.extend({
 	model: function() {
+		// This doesn't seem to be working when transitioning back to the index
 		return this.store.findAll('post').then(function(posts) {
 			return posts.get('lastObject');
 		});
@@ -33,11 +19,12 @@ App.PostsIndexRoute = Ember.Route.extend({
 
 App.PostsRoute = Ember.Route.extend({
 	model: function() {
-		// Do some promise finagling to return the posts in reverse order
-		return this.store.findAll('post').then(function(promise) {
-			return promise.toArray();
-		}).then(function(posts) {
-			return posts.sort().reverse();
-		});
+		return this.store.findAll('post');
+	},
+
+	setupController: function(controller, model) {
+		controller.set('model', model);
+		controller.set('firstPost', 0);
+		controller.set('lastPost', 1);
 	}
 });

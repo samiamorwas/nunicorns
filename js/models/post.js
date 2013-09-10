@@ -17,6 +17,21 @@ App.Post.FIXTURES = [
 	{
 		id: 3,
 		title: "Test 3",
-		body: "Yeah it is!"
+		body: "Here's some text talking about stuff that I'll keep typing blah blah blah \n blah blah blah some more."
+	}, 
+	{
+		id: 4,
+		title: "Test 4",
+		body: "Blaaaaaaaaaaaaaaaaaaaaaaah"
+	},
+	{
+		id: 5,
+		title: "Test 5",
+		body: "I'm so good."
+	},
+	{
+		id: 6,
+		title: "Test 6",
+		body: "I really am."
 	}
 ];

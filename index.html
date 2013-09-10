@@ -45,19 +45,24 @@
         </div>
       </div>
 
-      <div class="containter">
-        {{outlet}}
-      </div>
+      {{outlet}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="posts">
-      <div class="col-md-3">
-        {{#each}}
-          {{#link-to "post" this}}{{title}}{{/link-to}}
-        {{/each}}    
+      <div class="col-md-3 sidebar">
+        <div class="list-group">
+          <button {{action 'showNewer'}} {{bind-attr class=":list-group-item hasNoNewer"}}>Newer</button>
+          {{#each displayed}}
+            {{#link-to "post" this class="list-group-item"}}{{title}}{{/link-to}}
+          {{/each}}
+          <button {{action 'showOlder'}} {{bind-attr class=":list-group-item hasNoOlder"}}>Older</button>
+        </div>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-7">
         {{outlet}}
+      </div>
+      <div class="col-md-2 about">
+        <p>I came here to write on important topics and chew bubblegum. And I have plenty of bubblegum.</p>
       </div>
     </script>
 
@@ -76,5 +81,6 @@
     <script src="js/application.js"></script>
     <script src="js/router.js"></script>
     <script src="js/models/post.js"></script>
+    <script src="js/controllers/posts_controller.js"></script>
   </body>
 </html>

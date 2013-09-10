@@ -5,3 +5,16 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+.sidebar {
+	padding: 40px 15px;
+}
+.about {
+	padding: 40px 15px;
+	text-align: left;
+}
+.has-no-newer {
+	visibility: hidden;
+}
+.has-no-older {
+	visibility: hidden;
+}
