@@ -22,8 +22,8 @@ App.PostsController = Ember.ArrayController.extend({
 	actions: {
 		showNewer: function() {
 			var len = this.get('model').toArray().length;
-			var maxDiff = this.get('interval') - this.get('startSlice');
-			var diff = maxDiff > 0 ? len - (len - this.get('startSlice')) : this.get('interval');
+			var lessThanIntervalFromStart = (this.get('interval') - this.get('startSlice') > 0);
+			var diff = lessThanIntervalFromStart ? len - (len - this.get('startSlice')) : this.get('interval');
 			this.set('startSlice', this.get('startSlice') - diff);
 			this.set('endSlice', this.get('endSlice') - diff);
 		},
