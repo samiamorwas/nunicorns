@@ -304,7 +304,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #6899D3;
 }
 
 input,
@@ -4180,11 +4180,17 @@ textarea.input-group-sm > .input-group-btn > .btn {
   margin-bottom: 0;
 }
 
+@font-face {
+  font-family: lobster;
+  src: url(../assets/fonts/Lobster_1.3.otf);
+}
+
 .navbar-brand {
   float: left;
   padding: 15px 15px;
-  font-size: 18px;
+  font-size: 40px;
   line-height: 20px;
+  font-family: lobster;
 }
 
 .navbar-brand:hover,
@@ -4363,6 +4369,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   float: left;
   margin-top: 15px;
   margin-bottom: 15px;
+  font-family: lobster;
+  font-size: 15px;
 }
 
 @media (min-width: 768px) {
@@ -5247,7 +5255,8 @@ a.thumbnail:focus {
   padding: 10px 15px;
   margin-bottom: -1px;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
+  border: 2px solid #dddddd;
+  border-radius: 4px;
 }
 
 .list-group-item:first-child {
@@ -5288,8 +5297,8 @@ a.list-group-item:focus {
 .list-group-item.active:focus {
   z-index: 2;
   color: #ffffff;
-  background-color: #428bca;
-  border-color: #428bca;
+  background-color: #FF9C00;
+  border-color: #FF9C00;
 }
 
 .list-group-item.active .list-group-item-heading,
@@ -5317,7 +5326,7 @@ a.list-group-item:focus {
 .panel {
   margin-bottom: 20px;
   background-color: #ffffff;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -5352,7 +5361,7 @@ a.list-group-item:focus {
 }
 
 .panel > .list-group .list-group-item {
-  border-width: 1px 0;
+  border-width: 4px 0;
 }
 
 .panel > .list-group .list-group-item:first-child {

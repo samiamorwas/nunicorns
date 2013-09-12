@@ -1,0 +1,27 @@
+.sidebar {
+	padding: 20px 15px;
+}
+.about {
+	padding: 40px 15px;
+	text-align: left;
+}
+.has-no-newer {
+	visibility: hidden;
+}
+.has-no-older {
+	visibility: hidden;
+}
+.post {
+	padding: 40px 15px;
+	text-align: center;
+}
+button.list-group-item {
+	margin-bottom: 3px;
+	margin-top: 3px;
+	color: #333333;
+	font-size: 20px;
+	padding: 5px;
+}
+h1 {
+	font-family: lobster;
+}

@@ -8,13 +8,13 @@
     <meta name="author" content="Max Haarhaus">
     <!-- <link rel="shortcut icon" href="../../assets/ico/favicon.png"> -->
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Nunicorns - What does it mean?</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/starter-template.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -25,25 +25,15 @@
 
   <body>
     <script type="text/x-handlebars">
-      <div class="navbar navbar-inverse navbar-fixed-top">
+      <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            {{#link-to 'posts' class="navbar-brand"}}Thirty Minotaurs{{/link-to}}
+            {{#link-to 'posts' class="navbar-brand"}}Nunicorns{{/link-to}}
           </div>
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li>{{#link-to 'posts'}}Home{{/link-to}}</li>
-              <li>{{#link-to 'posts'}}About{{/link-to}}</li>
-              <li>{{#link-to 'posts'}}Contact{{/link-to}}</li>
-            </ul>
-          </div><!--/.nav-collapse -->
+          <p class="navbar-text">Making things happen</p>
+          <img src="assets/images/nunicorn.jpg" width="50" height="50" class="pull-right">
         </div>
-      </div>
+      </nav>
 
       {{outlet}}
     </script>
@@ -62,14 +52,20 @@
         {{outlet}}
       </div>
       <div class="col-md-2 about">
-        <p>I came here to write on important topics and chew bubblegum. And I have plenty of bubblegum.</p>
+        <div class="panel panel-default">
+          <p class="panel-body lead">I came here to write on important topics and chew bubblegum. And I have plenty of bubblegum.</p>
+        </div>
       </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="post">
-        <div class="starter-template">
-          <h1>{{title}}</h1>
-          <p class="lead">{{body}}</p>
+        <div class="post">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h1>{{title}}</h1>
+              <p class="lead">{{body}}</p>
+            </div>
+          </div>
         </div>
     </script>
 
