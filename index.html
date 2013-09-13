@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,14 +27,18 @@
       <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
           <div class="navbar-header">
-            {{#link-to 'posts' class="navbar-brand"}}Nunicorns{{/link-to}}
+            {{#link-to 'post' recentPost class="navbar-brand"}}Nunicorns{{/link-to}}
           </div>
-          <p class="navbar-text">Making things happen</p>
+          <p class="navbar-text">...and dragons</p>
           <img src="assets/images/nunicorn.jpg" width="50" height="50" class="pull-right">
         </div>
       </nav>
-
       {{outlet}}
+      <div class="col-md-2 about">
+        <div class="panel panel-default">
+          <p class="panel-body lead">I came here to write on important topics and chew bubblegum. And I have plenty of bubblegum.</p>
+        </div>
+      </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="posts">
@@ -50,11 +53,6 @@
       </div>
       <div class="col-md-7">
         {{outlet}}
-      </div>
-      <div class="col-md-2 about">
-        <div class="panel panel-default">
-          <p class="panel-body lead">I came here to write on important topics and chew bubblegum. And I have plenty of bubblegum.</p>
-        </div>
       </div>
     </script>
 
